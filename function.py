@@ -382,6 +382,7 @@ def PushCommit(Message="Empty Message"):
     os.system('git add ./RawData/*csv')
     os.system('git add COVID19_France_Regions.ipynb')
     os.system('git add load.py')
+    os.system('git add Rapports/COVID19_France_Regions.pdf')
     os.system('git add function.py')
     os.system('git commit -m "'+Message+'"')
     os.system('git push')
