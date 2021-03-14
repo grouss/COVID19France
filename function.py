@@ -309,7 +309,7 @@ def DisplayFrance(xmin=1,xmax=16,ymin=1,ymax=1e5):
         plt.legend(loc='upper left')
         plt.grid(which='both')
         plt.xlim(xmin,xmax)
-        plt.title("Flux "+fields[i]+" par jours (moy hebdo) en France")
+        plt.title("Flux "+fields[i]+" par jours (moy hebdo) en France "+str(int(soldeplus[-1]-abs(soldemoins[-1]))))
         plt.xticks(list(range(1,16)),["Janvier\n2020","Février\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
                                   "Jully\n2020","Aout\n2020","Septembre\n2020",
