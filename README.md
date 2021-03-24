@@ -42,8 +42,3 @@ https://www.francetvinfo.fr/sante/maladie/coronavirus/infographies-covid-19-mort
 - [load.py](load.py)
 - Données dans le repertoire local /RawData
 
-
-
-```python
-
-```
