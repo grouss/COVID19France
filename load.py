@@ -64,7 +64,7 @@ debut_confinement_2=dt(2020,10,30)
 fin_confinement_2=dt(2020,11,28)
 
 debut_couvrefeu_2=dt(2020,11,28)
-fin_couvrefeu_2=dt(2021,3,20)
+fin_couvrefeu_2=dt(2021,3,19)
 
 #dernière donnée connue
 debut_confinement_3=dt(2021,3,20)

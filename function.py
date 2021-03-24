@@ -124,7 +124,7 @@ def AddRectangles(axs,ymax,ymin):
 
     someX,someY=debut_couvrefeu_1,ymin
     dx,dy=fin_couvrefeu_1-debut_couvrefeu_1,ymax-ymin
-    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#e377c2', alpha=0.15))
+    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#e377c2', alpha=0.10))
 
     someX,someY=debut_confinement_2,ymin
     dx,dy=fin_confinement_2-debut_confinement_2,ymax-ymin
@@ -132,7 +132,7 @@ def AddRectangles(axs,ymax,ymin):
 
     someX,someY=debut_couvrefeu_2,ymin
     dx,dy=fin_couvrefeu_2-debut_couvrefeu_2,ymax-ymin
-    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#e377c2', alpha=0.15))
+    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#e377c2', alpha=0.10))
     
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
@@ -240,15 +240,15 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
 
     someX,someY=debut_confinement_2,ymin
     dx,dy=fin_confinement_2-debut_confinement_2,ymax-ymin
-    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.25))
+    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
 
     someX,someY=debut_couvrefeu_2,ymin
     dx,dy=fin_couvrefeu_2-debut_couvrefeu_2,ymax-ymin
-    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.15))
+    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.10))
 
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
-    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.20))
+    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
     
 def DisplayFrance(xmin=1,xmax=16,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
