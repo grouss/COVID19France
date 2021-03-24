@@ -388,6 +388,7 @@ def PushCommit(Message="Empty Message"):
     time.sleep(32) # autosave has been set to 30s
     os.system('git add '+Filename+'.pdf')
     os.system('git add ./RawData/*csv')
+    os.system('git add ./README')
     os.system('git add '+Filename+'.ipynb')
     os.system('git add load.py')
     #os.system('git add Rapports/COVID19_France_Regions.pdf')
