@@ -391,7 +391,7 @@ def CreateReport(Filename="COVID19_France_Regions"):
     os.system('pdflatex '+Filename+'.tex')
     os.system('pdflatex '+Filename+'.tex')
     
-def PushCommit(Message="Empty Message"):
+def PushCommit(Message="Mise à jour du rapport "+str(datetime.now())[:10]):
     os.system('jupyter nbconvert --to Markdown README.ipynb')
     Filename="COVID19_France_Regions"
     time.sleep(32) # autosave has been set to 30s
