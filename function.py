@@ -384,11 +384,12 @@ def CreateReport(Filename="COVID19_France_Regions"):
     os.system('pdflatex '+Filename+'.tex')
     
 def PushCommit(Message="Empty Message"):
+    os.system('jupyter nbconvert --to Markdown README.ipynb')
     Filename="COVID19_France_Regions"
     time.sleep(32) # autosave has been set to 30s
     os.system('git add '+Filename+'.pdf')
     os.system('git add ./RawData/*csv')
-    os.system('git add ./README')
+    os.system('git add ./README.md')
     os.system('git add '+Filename+'.ipynb')
     os.system('git add load.py')
     #os.system('git add Rapports/COVID19_France_Regions.pdf')
