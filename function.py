@@ -378,13 +378,19 @@ def UpdateData(Verbose=False):
                 if dx<d[-1][-20:-10]: dx=d[-1][-20:-10]
     PushCommit("Data Update")    
     return dx
-
+def CreateReport(Filename="COVID19_France_Regions"):
+    os.system('jupyter nbconvert --to latex '+Filename+'.ipynb')
+    os.system('pdflatex '+Filename+'.tex')
+    os.system('pdflatex '+Filename+'.tex')
+    
 def PushCommit(Message="Empty Message"):
+    Filename="COVID19_France_Regions"
     time.sleep(32) # autosave has been set to 30s
+    os.system('git add '+Filename+'.pdf')
     os.system('git add ./RawData/*csv')
-    os.system('git add COVID19_France_Regions.ipynb')
+    os.system('git add '+Filename+'.ipynb')
     os.system('git add load.py')
-    os.system('git add Rapports/COVID19_France_Regions.pdf')
+    #os.system('git add Rapports/COVID19_France_Regions.pdf')
     os.system('git add function.py')
     os.system('git commit -m "'+Message+'"')
     os.system('git push')
