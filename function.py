@@ -136,7 +136,7 @@ def AddRectangles(axs,ymax,ymin):
     
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
-    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#e377c2', alpha=0.35))
+    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#9467bd', alpha=0.35))
     
 def DisplayAge(clage,normed=False):
     if clage in trancheage:
@@ -391,7 +391,8 @@ def CreateReport(Filename="COVID19_France_Regions"):
     os.system('pdflatex '+Filename+'.tex')
     os.system('pdflatex '+Filename+'.tex')
     
-def PushCommit(Message="Mise à jour du rapport "+str(datetime.now())[:10]):
+def PushCommit(Message=None):
+    if Message==None: Message="Mise à jour du rapport "+str(datetime.now())[:10]
     os.system('jupyter nbconvert --to Markdown README.ipynb')
     Filename="COVID19_France_Regions"
     time.sleep(32) # autosave has been set to 30s
