@@ -273,7 +273,7 @@ def DisplayFrance(xmin=3,xmax=16,ymin=1,ymax=1e5):
 
     plt.legend(loc='lower left')
     plt.grid(which='both')
-    plt.title(fields[0]+" (en France) : "+str(int(yy[-1,0]))+" max "+str(int(max(yy[:,0])))+" | "
+    plt.title(fields[0]+" (en France) : "+str(int(yy[-1,0]))+"()"+" max "+str(int(max(yy[:,0])))+" | "
                                  +fields[1]+" (en France) : "+str(int(yy[-1,1]))+" max "+str(int(max(yy[:,1])))+" | "
                                  +fields[2]+" (par jours) : "+str(int(yy[-1,2]))+" max "+str(int(max(yy[:,2])))
              )
