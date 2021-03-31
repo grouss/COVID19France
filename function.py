@@ -250,7 +250,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
     
-def DisplayFrance(xmin=1,xmax=16,ymin=1,ymax=1e5):
+def DisplayFrance(xmin=2,xmax=16,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
     currentAxis = plt.gca()
@@ -271,8 +271,12 @@ def DisplayFrance(xmin=1,xmax=16,ymin=1,ymax=1e5):
 
     # affichage de la période du premier confinement
 
-    plt.legend(loc='upper left')
+    plt.legend(loc='lower left')
     plt.grid(which='both')
+    plt.title(fields[0]+" (en France) : "+str(int(yy[-1,0]))+" max "+str(int(max(yy[:,0])))+" | "
+                                 +fields[1]+" (en France) : "+str(int(yy[-1,1]))+" max "+str(int(max(yy[:,1])))+" | "
+                                 +fields[2]+" (par jours) : "+str(int(yy[-1,2]))+" max "+str(int(max(yy[:,2])))
+             )
     plt.xticks(list(range(1,16)),["Janvier\n2020","Février\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
                                   "Jully\n2020","Aout\n2020","Septembre\n2020",
