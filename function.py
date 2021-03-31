@@ -250,7 +250,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
     
-def DisplayFrance(xmin=2,xmax=16,ymin=1,ymax=1e5):
+def DisplayFrance(xmin=3,xmax=16,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
     currentAxis = plt.gca()
@@ -318,7 +318,7 @@ def DisplayFrance(xmin=2,xmax=16,ymin=1,ymax=1e5):
         #print(len(xx[n:]),len(vv[n:]),len(vv[0:-n]),len(yy[n:,i]),len(yy[0:-n,i]))
         # on exclue la première valeur qui n'est pas commune entre le deux jeux de données
         plt.semilogy(xx[n:],abs(soldemoins),label="Sorties",color="green")
-        plt.legend(loc='upper left')
+        plt.legend(loc='lower left')
         plt.grid(which='both')
         plt.xlim(xmin,xmax)
         plt.title("Flux "+fields[i]+" par jours (moy hebdo) en France "
