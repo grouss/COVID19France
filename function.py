@@ -217,17 +217,19 @@ def DisplayAge(clage,normed=False):
 
         #for i in range(4):
         for i in range(dfields):
-            axs[i].set_xlim(0.99,15.99)
-            axs[i].set_xticks(list(range(1,16)))
+            axs[i].set_xticks(list(range(1,17)))
             axs[i].set_xticklabels([
                 "Jan\n20","Fev\n20","Mar\n20",
                 "Avr\n20","Mai\n20","Jun\n20",
                 "Jul\n20","Aou\n20","Sep\n20",
                 "Oct\n20","Nov\n20","Dec\n20",
-                "Jan\n21","Fev\n21","Mar\n21"
+                "Jan\n21","Fev\n21","Mar\n21",
+                "Avr\n21"
             ],ha="left")
             axs[i].legend()
             axs[i].grid(which="both")
+            axs[i].set_xlim(2.99,16.99)
+
         plt.show()
 def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     someX,someY=debut_confinement_1,ymin
@@ -250,7 +252,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
     
-def DisplayFrance(xmin=3,xmax=16,ymin=1,ymax=1e5):
+def DisplayFrance(xmin=3,xmax=17,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
     currentAxis = plt.gca()
@@ -261,27 +263,32 @@ def DisplayFrance(xmin=3,xmax=16,ymin=1,ymax=1e5):
         yy=np.zeros((len(xx),4))
         for reg in data3:
             yy+=data3[reg][clage][:,1:5]
+    stitle=""
     for i in range(2):
         plt.semilogy(xx,yy[:,i],label=fields[i]+" en France")
+        stitle+=fields[0]+" (en France) : "+str(int(yy[-1,i]))
+        stitle+=" ("+str(int(yy[-1,i]-yy[-2,i]))+")"
+        stitle+=" max "+str(int(max(yy[:,i])))+" | "
         #print(fields[i], ((yy[n:,i]))[-1]," max ",np.max(yy[n:,i]))
     n=7
     for i in range(2,dfields):   
         Delta=(xx[n:]-xx[0:-n])/(dt(2020,1,2)-dt(2020,1,1))
-        plt.semilogy(xx[n:],(yy[n:,i]-yy[0:-n,i])/Delta,label=fields[i]+" par jours (moy hebdo)")
+        zz=(yy[n:,i]-yy[0:-n,i])/Delta
+        plt.semilogy(xx[n:],zz,label=fields[i]+" par jours (moy hebdo)")
+        stitle+=fields[2]+" (par jours) : "+str(int(zz[-1]))
+        stitle+=" ("+str(int(zz[-1]-zz[-2]))+")"
+        stitle+=" max "+str(int(max(zz[:])))
 
     # affichage de la période du premier confinement
 
     plt.legend(loc='lower left')
     plt.grid(which='both')
-    plt.title(fields[0]+" (en France) : "+str(int(yy[-1,0]))+"()"+" max "+str(int(max(yy[:,0])))+" | "
-                                 +fields[1]+" (en France) : "+str(int(yy[-1,1]))+" max "+str(int(max(yy[:,1])))+" | "
-                                 +fields[2]+" (par jours) : "+str(int(yy[-1,2]))+" max "+str(int(max(yy[:,2])))
-             )
-    plt.xticks(list(range(1,16)),["Janvier\n2020","Février\n2020","Mars\n2020",
+    plt.title(stitle)
+    plt.xticks(list(range(1,17)),["Janvier\n2020","Février\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
                                   "Jully\n2020","Aout\n2020","Septembre\n2020",
                                   "Octobre\n2020","Novembre\n2020","Décembre\n2020",
-                                  "Janvier\n2021","Février\n2021","Mars\n2021"
+                                  "Janvier\n2021","Février\n2021","Mars\n2021","Avril\n2021"
                                  ],ha="left")
     plt.xlim(xmin,xmax)
     plt.ylim(ymin,ymax)
@@ -301,7 +308,6 @@ def DisplayFrance(xmin=3,xmax=16,ymin=1,ymax=1e5):
         if i==0:
             AddRectangleFrance(currentAxis,1e4,10)
             plt.ylim(10,1e4)
-
         else:
             AddRectangleFrance(currentAxis,1e3,5)
             plt.ylim(5,1e3)
@@ -320,16 +326,16 @@ def DisplayFrance(xmin=3,xmax=16,ymin=1,ymax=1e5):
         plt.semilogy(xx[n:],abs(soldemoins),label="Sorties",color="green")
         plt.legend(loc='lower left')
         plt.grid(which='both')
-        plt.xlim(xmin,xmax)
         plt.title("Flux "+fields[i]+" par jours (moy hebdo) en France "
                   +str(int(soldeplus[-1]-abs(soldemoins[-1])))
                   +"=("+str(int(soldeplus[-1]))+str(int(soldemoins[-1]))+")")
-        plt.xticks(list(range(1,16)),["Janvier\n2020","Février\n2020","Mars\n2020",
+        plt.xticks(list(range(1,17)),["Janvier\n2020","Février\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
                                   "Jully\n2020","Aout\n2020","Septembre\n2020",
                                   "Octobre\n2020","Novembre\n2020","Décembre\n2020",
-                                  "Janvier\n2021","Février\n2021","Mars\n2021"
+                                  "Janvier\n2021","Février\n2021","Mars\n2021","Avril\n2021"
                                  ],ha="left")
+        plt.xlim(xmin,xmax)
         plt.show()
 
 def DisplayRegions(reg):
@@ -340,14 +346,17 @@ def DisplayRegions(reg):
         #fig, axs = plt.subplots(1, 4,figsize=(20,5))
         fig, axs = plt.subplots(1, dfields,figsize=(20,5))
         for i in range(dfields):
-            axs[i].set_xlim(0.99,15.99)
-            axs[i].set_xticks(list(range(1,16)))
+            axs[i].set_xticks(list(range(1,17)))
             axs[i].set_xticklabels([
                 "Jan\n20","Fev\n20","Mar\n20",
                 "Avr\n20","Mai\n20","Jun\n20",
                 "Jul\n20","Aou\n20","Sep\n20",
                 "Oct\n20","Nov\n20","Dec\n20",
-                "Jan\n21","Fev\n21","Mar\n21"],ha="left")
+                "Jan\n21","Fev\n21","Mar\n21",
+                "Avr\n21"
+            ],ha="left")
+            axs[i].set_xlim(2.99,16.99)
+
         #for clage in data3[reg]:
         for clage in [0]:
             #print(axs)
