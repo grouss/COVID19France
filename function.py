@@ -266,7 +266,7 @@ def DisplayFrance(xmin=3,xmax=17,ymin=1,ymax=1e5):
     stitle=""
     for i in range(2):
         plt.semilogy(xx,yy[:,i],label=fields[i]+" en France")
-        stitle+=fields[0]+" (en France) : "+str(int(yy[-1,i]))
+        stitle+=fields[i]+" (en France) : "+str(int(yy[-1,i]))
         stitle+=" ("+str(int(yy[-1,i]-yy[-2,i]))+")"
         stitle+=" max "+str(int(max(yy[:,i])))+" | "
         #print(fields[i], ((yy[n:,i]))[-1]," max ",np.max(yy[n:,i]))
@@ -275,7 +275,7 @@ def DisplayFrance(xmin=3,xmax=17,ymin=1,ymax=1e5):
         Delta=(xx[n:]-xx[0:-n])/(dt(2020,1,2)-dt(2020,1,1))
         zz=(yy[n:,i]-yy[0:-n,i])/Delta
         plt.semilogy(xx[n:],zz,label=fields[i]+" par jours (moy hebdo)")
-        stitle+=fields[2]+" (par jours) : "+str(int(zz[-1]))
+        stitle+=fields[i]+" (par jours) : "+str(int(zz[-1]))
         stitle+=" ("+str(int(zz[-1]-zz[-2]))+")"
         stitle+=" max "+str(int(max(zz[:])))
 
