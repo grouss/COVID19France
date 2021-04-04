@@ -136,7 +136,7 @@ def AddRectangles(axs,ymax,ymin):
     
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
-    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#9467bd', alpha=0.25))
+    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#9467bd', alpha=0.20))
     
     someX,someY=debut_confinement_4,ymin
     dx,dy=fin_confinement_4-debut_confinement_4,ymax-ymin
@@ -254,7 +254,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
 
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
-    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.25))
+    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.20))
 
     someX,someY=debut_confinement_4,ymin
     dx,dy=fin_confinement_4-debut_confinement_4,ymax-ymin
