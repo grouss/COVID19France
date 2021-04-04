@@ -136,6 +136,10 @@ def AddRectangles(axs,ymax,ymin):
     
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
+    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#9467bd', alpha=0.25))
+    
+    someX,someY=debut_confinement_4,ymin
+    dx,dy=fin_confinement_4-debut_confinement_4,ymax-ymin
     axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#9467bd', alpha=0.35))
     
 def DisplayAge(clage,normed=False):
@@ -250,8 +254,13 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
 
     someX,someY=debut_confinement_3,ymin
     dx,dy=fin_confinement_3-debut_confinement_3,ymax-ymin
+    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.25))
+
+    someX,someY=debut_confinement_4,ymin
+    dx,dy=fin_confinement_4-debut_confinement_4,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
     
+
 def DisplayFrance(xmin=3,xmax=17,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
