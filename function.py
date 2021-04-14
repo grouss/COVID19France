@@ -77,7 +77,7 @@ def ReadNouveaux(dx):
             flist.append(path+file)
         
     if len(flist)!=1:
-        print("Error plus d'un fichier")
+        print("Error plus d'un fichier ou aucun")
     else:
         filename=flist[0]
         print("Read ",filename)
