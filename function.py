@@ -141,6 +141,11 @@ def AddRectangles(axs,ymax,ymin):
     someX,someY=debut_confinement_4,ymin
     dx,dy=fin_confinement_4-debut_confinement_4,ymax-ymin
     axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#9467bd', alpha=0.35))
+
+    someX,someY=debut_couvrefeu_3,ymin
+    dx,dy=fin_couvrefeu_3-debut_couvrefeu_3,ymax-ymin
+    axs.add_patch(Rectangle((someX, someY), dx, dy, color = '#e377c2', alpha=0.10))
+    
     
 def DisplayAge(clage,normed=False):
     if clage in trancheage:
@@ -260,6 +265,9 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_confinement_4-debut_confinement_4,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.35))
     
+    someX,someY=debut_couvrefeu_3,ymin
+    dx,dy=fin_couvrefeu_3-debut_couvrefeu_3,ymax-ymin
+    currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.10))
 
 def DisplayFrance(xmin=3,xmax=18,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
