@@ -90,16 +90,26 @@ def ReadNouveaux(dx):
         #print(1,c[1].rsplit(';'))
         dataN={}
         for i in range(1,len(c)):
-        #    l=c[i].rsplit(',')
+            #    l=c[i].rsplit(',')
             l=c[i].replace('\"','').replace('\n','').rsplit(';')
-            dep=l[0]
-            hospi=int(l[2])
-            rea=int(l[3])
-            dc=int(l[4])
-            rad=int(l[5])
-            a=int(l[1][:4])
-            m=int(l[1][5:7])
-            j=int(l[1][8:10])
+            try:
+                dep=l[0]
+                hospi=int(l[2])
+                rea=int(l[3])
+                dc=int(l[4])
+                rad=int(l[5])
+                a=int(l[1][:4])
+                m=int(l[1][5:7])
+                j=int(l[1][8:10])
+            except:
+                print("ERROR",l)
+                hospi=int(l[2])
+                rea=int(l[3])
+                dc=int(l[4])
+                rad=int(l[5])
+                a=int(l[1][:4])
+                m=int(l[1][5:7])
+                j=int(l[1][8:10])                
             #print(l[1],a,m,j,dt(a,m,j))
             if i!=0:
                 if dep not in dataN: dataN[dep]=[]
