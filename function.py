@@ -279,7 +279,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_couvrefeu_3-debut_couvrefeu_3,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.10))
 
-def DisplayFrance(xmin=3,xmax=18,ymin=1,ymax=1e5):
+def DisplayFrance(xmin=3,xmax=19,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
     currentAxis = plt.gca()
@@ -311,12 +311,12 @@ def DisplayFrance(xmin=3,xmax=18,ymin=1,ymax=1e5):
     plt.legend(loc='lower left')
     plt.grid(which='both')
     plt.title(stitle)
-    plt.xticks(list(range(1,19)),["Janvier\n2020","Février\n2020","Mars\n2020",
+    plt.xticks(list(range(1,20)),["Janvier\n2020","Février\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
-                                  "Jully\n2020","Aout\n2020","Septembre\n2020",
+                                  "Juillet\n2020","Aout\n2020","Septembre\n2020",
                                   "Octobre\n2020","Novembre\n2020","Décembre\n2020",
                                   "Janvier\n2021","Février\n2021","Mars\n2021",
-                                  "Avril\n2021","Mai\n2021","Juin\n2021"
+                                  "Avril\n2021","Mai\n2021","Juin\n2021","Juillet"
                                  ],ha="left")
     plt.xlim(xmin,xmax)
     plt.ylim(ymin,ymax)
