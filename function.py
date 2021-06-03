@@ -91,7 +91,7 @@ def ReadNouveaux(dx):
         dataN={}
         for i in range(1,len(c)):
             #    l=c[i].rsplit(',')
-            l=c[i].replace('\"','').replace('\n','').rsplit(';')
+            l=c[i].replace('\"','').replace('\n','').replace("NA","0").rsplit(';')
             try:
                 dep=l[0]
                 hospi=int(l[2])
@@ -102,7 +102,7 @@ def ReadNouveaux(dx):
                 m=int(l[1][5:7])
                 j=int(l[1][8:10])
             except:
-                print("ERROR",l)
+                print("ERROR",l) 
                 hospi=int(l[2])
                 rea=int(l[3])
                 dc=int(l[4])
