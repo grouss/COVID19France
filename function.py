@@ -281,7 +281,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_couvrefeu_3-debut_couvrefeu_3,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.10))
 
-def DisplayFrance(xmin=3,xmax=19,ymin=1,ymax=1e5):
+def DisplayFrance(xmin=3,xmax=22,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
     currentAxis = plt.gca()
