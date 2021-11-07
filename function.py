@@ -244,7 +244,8 @@ def DisplayAge(clage,normed=False):
                 "Oct\n20","Nov\n20","Dec\n20",
                 "Jan\n21","Fev\n21","Mar\n21",
                 "Avr\n21","Mai\n21","juin\n21",
-                "Jul\n21","Aou\n21","Sep\n21"
+                "Jul\n21","Aou\n21","Sep\n21",
+                
                 
             ],ha="left")
             axs[i].legend()
