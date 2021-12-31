@@ -236,14 +236,15 @@ def DisplayAge(clage,normed=False):
 
         #for i in range(4):
         for i in range(dfields):
-            axs[i].set_xticks(list(range(1,25,2)))
+            axs[i].set_xticks(list(range(1,27,2)))
             axs[i].set_xticklabels([
                 "Jan\n20","Mar\n20","Mai\n20",
                 "Jul\n20","Sep\n20","Nov\n20",
                 "Jan\n21","Mar\n21","Mai\n21",
-                "Jul\n21","Sep\n21","Nov\n21"
+                "Jul\n21","Sep\n21","Nov\n21",
+                "Jan\n22"
             ],ha="left")
-            axs[i].set_xlim(2.99,24.99)
+            axs[i].set_xlim(2.99,26.99)
             axs[i].legend()
             axs[i].grid(which="both")
 
@@ -277,7 +278,7 @@ def AddRectangleFrance(currentAxis,ymax=1e5,ymin=1):
     dx,dy=fin_couvrefeu_3-debut_couvrefeu_3,ymax-ymin
     currentAxis.add_patch(Rectangle((someX, someY), dx, dy, color = "c", alpha=0.10))
 
-def DisplayFrance(xmin=3,xmax=22+3,ymin=1,ymax=1e5):
+def DisplayFrance(xmin=3,xmax=22+3+2,ymin=1,ymax=1e5):
     plt.figure(figsize=(20,5))
     # 
     currentAxis = plt.gca()
@@ -318,14 +319,15 @@ def DisplayFrance(xmin=3,xmax=22+3,ymin=1,ymax=1e5):
     #                              "Aout\n2021","Septembre\n2021",
     #                              "Octobre\n2021","Novembre\n2021","Décembre\n2021"
     #                             ],ha="left")
-    plt.xticks(list(range(1,20+2+3)),["Jan.\n2020","Fév.\n2020","Mars\n2020",
+    plt.xticks(list(range(1,20+2+3+2)),["Jan.\n2020","Fév.\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
                                   "Juil.\n2020","Aout\n2020","Sept.\n2020",
                                   "Oct.\n2020","Nov.\n2020","Déc.\n2020",
                                   "Jan.\n2021","Fév.\n2021","Mars\n2021",
                                   "Avril\n2021","Mai\n2021","Juin\n2021","Juil.\n2021",
                                   "Aout\n2021","Sept.\n2021",
-                                  "Oct.\n2021","Nov.\n2021","Déc.\n2021"
+                                  "Oct.\n2021","Nov.\n2021","Déc.\n2021",
+                                   "Jan.\n2022","Fév.\n2022"   
                                  ],ha="left")
     plt.xlim(xmin,xmax)
     plt.ylim(ymin,ymax)
@@ -366,14 +368,15 @@ def DisplayFrance(xmin=3,xmax=22+3,ymin=1,ymax=1e5):
         plt.title("Flux "+fields[i]+" par jours (moy hebdo) en France "
                   +str(int(soldeplus[-1]-abs(soldemoins[-1])))
                   +"=("+str(int(soldeplus[-1]))+str(int(soldemoins[-1]))+")")
-        plt.xticks(list(range(1,20+2+3)),["Jan.\n2020","Fév.\n2020","Mars\n2020",
+        plt.xticks(list(range(1,20+2+3+2)),["Jan.\n2020","Fév.\n2020","Mars\n2020",
                                   "Avril\n2020","Mai\n2020","Juin\n2020",
                                   "Juil.\n2020","Aout\n2020","Sept.\n2020",
                                   "Oct.\n2020","Nov.\n2020","Déc.\n2020",
                                   "Jan.\n2021","Fév.\n2021","Mars\n2021",
                                   "Avril\n2021","Mai\n2021","Juin\n2021","Juil.\n2021",
                                   "Aout\n2021","Sept.\n2021",
-                                  "Oct.\n2021","Nov.\n2021","Déc.\n2021"
+                                  "Oct.\n2021","Nov.\n2021","Déc.\n2021",
+                                   "Jan.\n2022","Fév.\n2022"   
                                  ],ha="left")
         plt.xlim(xmin,xmax)
         plt.show()
@@ -398,14 +401,15 @@ def DisplayRegions(reg):
             #],ha="left")
             #axs[i].set_xlim(2.99,18.99+3+3)
 
-            axs[i].set_xticks(list(range(1,25,2)))
+            axs[i].set_xticks(list(range(1,25+2,2)))
             axs[i].set_xticklabels([
                 "Jan\n20","Mar\n20","Mai\n20",
                 "Jul\n20","Sep\n20","Nov\n20",
                 "Jan\n21","Mar\n21","Mai\n21",
-                "Jul\n21","Sep\n21","Nov\n21"
+                "Jul\n21","Sep\n21","Nov\n21",
+                "Jan\n20"
             ],ha="left")
-            axs[i].set_xlim(2.99,24.99)
+            axs[i].set_xlim(2.99,24.99+2)
 
         #for clage in data3[reg]:
         for clage in [0]:
