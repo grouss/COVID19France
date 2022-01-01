@@ -5,7 +5,7 @@ def convertstring2date(date):
         d=d.split('-')
         for i in range(len(d)):
             d[i]=int(d[i])
-        if (d[0]==2020 or d[0]==2021) and (d[1]<13 and d[1]>0) and (d[2]>0 and d[2]<32):
+        if (d[0]==2020 or d[0]==2021 or d[0]==2022) and (d[1]<13 and d[1]>0) and (d[2]>0 and d[2]<32):
             return d[0],d[1],d[2]
     print(d)
     return "Error"
