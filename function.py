@@ -447,7 +447,9 @@ def UpdateData(Verbose=False):
     for  l in L:
         if l[-3:]=="csv" and l[:5]=="https":
             d=l.split('/')
-            if d[-1][:7]=="donnees":
+            #if d[-1][:7]=="donnees":
+            # new name
+            if "donnees" in d[-1] or "covid" in d[-1]:
                 os.system('wget '+l+' -O RawData/'+d[-1])
                 if Verbose: print(d[-1],d[-1][-20:-10],dx)
                 if dx<d[-1][-20:-10]: dx=d[-1][-20:-10]
