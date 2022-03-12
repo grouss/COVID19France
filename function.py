@@ -14,11 +14,11 @@ def ReadClasseAge(dx):
     flist=[]
     for file in os.listdir(path):
         #if fnmatch.fnmatch(file, "donnees-hospitalieres-classe-age-covid19-"+dx+"*.csv"):
-        if fnmatch.fnmatch(file, " covid_hospit_clage10-"+dx+"*.csv"):
+        if fnmatch.fnmatch(file, "covid_hospit_clage10-"+dx+"*.csv"):
             flist.append(path+file)
         
     if len(flist)!=1:
-        print("Error plus d'un fichier",dx,flist)
+        print("Error plus d'un fichier ou aucun RC",dx,flist)
     else:
         filename=flist[0]
         print("Read ",filename)
@@ -79,7 +79,7 @@ def ReadNouveaux(dx):
             flist.append(path+file)
         
     if len(flist)!=1:
-        print("Error plus d'un fichier ou aucun")
+        print("Error plus d'un fichier ou aucun RN",flist,dx)
     else:
         filename=flist[0]
         print("Read ",filename)
