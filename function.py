@@ -14,7 +14,7 @@ def ReadClasseAge(dx):
     flist=[]
     for file in os.listdir(path):
         #if fnmatch.fnmatch(file, "donnees-hospitalieres-classe-age-covid19-"+dx+"*.csv"):
-        if fnmatch.fnmatch(file, "covid_hospit_clage10-"+dx+"*.csv"):
+        if fnmatch.fnmatch(file, "covid-hospit-clage10-"+dx+"*.csv"):
             flist.append(path+file)
         
     if len(flist)!=1:
@@ -75,7 +75,7 @@ def ReadNouveaux(dx):
     flist=[]
     for file in os.listdir(path):
         #if fnmatch.fnmatch(file, "donnees-hospitalieres-nouveaux-covid19-"+dx+"*.csv"):
-        if fnmatch.fnmatch(file, "covid_hospit_incid-"+dx+"*.csv"):            
+        if fnmatch.fnmatch(file, "covid-hospit-incid-"+dx+"*.csv"):            
             flist.append(path+file)
         
     if len(flist)!=1:
