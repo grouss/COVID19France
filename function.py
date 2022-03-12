@@ -441,7 +441,7 @@ def UpdateData(Verbose=False):
     s=os.popen('wget -m -k -p -np  https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/')
     #print(s.read())
     time.sleep(5)
-    f=open("www.data.gouv.fr//fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/index.html","r")
+    f=open("www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/index.html","r")
     L=(f.read()).split('\"')
     #print(len(L))
     for  l in L:
