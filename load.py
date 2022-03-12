@@ -10,6 +10,7 @@ import os,time
 
 dx=UpdateData()
 
+print("dx",dx)
 
 #dx="2021-01-07"
 #path="/content/drive/My Drive/Colab Notebooks/"
