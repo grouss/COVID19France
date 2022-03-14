@@ -238,15 +238,15 @@ def DisplayAge(clage,normed=False):
 
         #for i in range(4):
         for i in range(dfields):
-            axs[i].set_xticks(list(range(1,27,2)))
+            axs[i].set_xticks(list(range(1,27+2,2)))
             axs[i].set_xticklabels([
                 "Jan\n20","Mar\n20","Mai\n20",
                 "Jul\n20","Sep\n20","Nov\n20",
                 "Jan\n21","Mar\n21","Mai\n21",
                 "Jul\n21","Sep\n21","Nov\n21",
-                "Jan\n22"
+                "Jan\n22","Mar\n22"
             ],ha="left")
-            axs[i].set_xlim(2.99,26.99)
+            axs[i].set_xlim(2.99,26.99+2)
             axs[i].legend()
             axs[i].grid(which="both")
 
@@ -405,15 +405,15 @@ def DisplayRegions(reg):
             #],ha="left")
             #axs[i].set_xlim(2.99,18.99+3+3)
 
-            axs[i].set_xticks(list(range(1,25+2,2)))
+            axs[i].set_xticks(list(range(1,25+2+2,2)))
             axs[i].set_xticklabels([
                 "Jan\n20","Mar\n20","Mai\n20",
                 "Jul\n20","Sep\n20","Nov\n20",
                 "Jan\n21","Mar\n21","Mai\n21",
                 "Jul\n21","Sep\n21","Nov\n21",
-                "Jan\n20"
+                "Jan\n22","Mar\n22"
             ],ha="left")
-            axs[i].set_xlim(2.99,24.99+2)
+            axs[i].set_xlim(2.99,24.99+2+2)
 
         #for clage in data3[reg]:
         for clage in [0]:
