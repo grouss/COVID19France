@@ -1,4 +1,5 @@
 # Analyse brute des données quotidiennes publiques covid19  France et régions
+(projet en pause)
 
 
 [Dernier Rapport au format pdf sur le site github](https://github.com/grouss/COVID19France/raw/master/COVID19_France_Regions.pdf)
